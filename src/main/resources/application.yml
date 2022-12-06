@@ -1,0 +1,53 @@
+spring:
+  mail:
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: '465'
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: 'false'
+          starttls:
+            enable: 'true'
+          ssl:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.gmail.com
+    username: 'testekingdomcode'
+    password: 'ascrznfvqpwcedii'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: 'Al&123456'
+    username: 'alefe'
+    url: 'jdbc:sqlserver://alefe.database.windows.net:1433;database=test'
+  jackson:
+    default-property-inclusion: NON_NULL
+  servlet:
+    multipart:
+      max-file-size: '10MB'
+
+application:
+  reset-password-url: 'http://apolo-front.s3-website-sa-east-1.amazonaws.com/reset_password'
+  smtp-sender: test@example.com
+auth:
+  reset-password-token-expiration-miliseg: '900000'
+  public-sign-up-url-enable: 'true'
+
+aws:
+  s3:
+    access-key: 'AKIASHGA6O5PDF57MSCO'
+    secret-key: '1mtzDGQF1eavRj44VLsM5CDachuw9gfy26N14vbX'
+    bucket:
+      name: 'img-profile'
+
+encrypted:
+  secretJwt: 'ad45c8344e055b169c7edbfc1675333f'
+
+jwt:
+  expiration: '86400000'
